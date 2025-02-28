@@ -1,0 +1,25 @@
+# name: Actions
+
+# on:
+#   push:
+#     branches:
+#       - master
+
+# jobs:
+#   decir-hola:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       packages: write
+#     environment: produccion
+#     steps:
+#       - name: Mostrar mensaje
+#         run: echo "Hola causas"
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#       - name: Logearnos en GHCR
+#         run: echo "${{ secrets.TOKEN }}" | docker login ghcr.io -u maicol090 --password-stdin
+#       - name: Crear imagen
+#         run: docker build . -t ghcr.io/maicol090/flask-image:latest
+#       - name: Desplegar imagen
+#         run: docker push ghcr.io/maicol090/flask-image:latest
